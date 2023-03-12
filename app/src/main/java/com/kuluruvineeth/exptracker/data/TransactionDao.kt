@@ -43,7 +43,7 @@ interface TransactionDao {
     fun getMonthlyExpTransaction(transactionType: String = TransactionType.EXPENSE.title): Flow<List<TransactionDto>>
 
 
-    @Query("SELECT * FROM transaction_table WHERE entry_date BETWEEN date('now','-7 day') AND date('now','localTime') AND transaction_type = :transactionType")
+    @Query("SELECT * FROM transaction_table WHERE entry_date BETWEEN date('now','-7 day') AND date('now','localtime') AND transaction_type = :transactionType")
     fun getWeeklyExpTransaction(transactionType: String = TransactionType.EXPENSE.title): Flow<List<TransactionDto>>
 
 
